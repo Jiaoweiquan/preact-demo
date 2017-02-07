@@ -16,7 +16,8 @@
     },
     "files": [
         "./declarations.d.ts",
-        "./src/index.ts"
+        "./src/index.ts",
+        "./src/app.tsx"
     ],
     "exclude": [
         "node_modules"

@@ -41,6 +41,10 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin('vendors','vendors.js')
     ],
     resolve: {
+        alias: {
+            'react': 'preact-compat',
+            'react-dom': 'preact-compat'
+        },
         extensions:['', '.js', '.jsx', '.ts','.tsx'],
         modulesDirectories: ['node_modules', ],
     }

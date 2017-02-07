@@ -10,7 +10,8 @@
   "author": "JVQ",
   "license": "ISC",
   "dependencies": {
-    "preact": "^7.1.0"
+    "preact": "^7.1.0",
+    "preact-compat": "^3.13.1"
   },
   "devDependencies": {
     "css-loader": "^0.26.1",
