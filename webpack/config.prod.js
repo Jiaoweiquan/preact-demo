@@ -16,7 +16,7 @@ module.exports = {
     output: {
         path: cd('dist'),
         filename: '[name].js',
-        publicPath: '/preact-demo/'
+        publicPath: '/preact-demo/dist/'
     },
      module: {
         loaders:[
@@ -30,14 +30,15 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env': {NODE_ENV: JSON.stringify('production')}
         }),
-        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.optimize.DedupePlugin(),
         new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.CommonsChunkPlugin('vendors','vendors.js'),
+        new webpack.optimize.AggressiveMergingPlugin(),
         new HtmlWebpackPlugin({
             template:cd('index.template.html'),
             inject:'body',            
             filename:'../index.html',
         }),
-        new webpack.optimize.CommonsChunkPlugin('vendors','vendors.js')
     ],
     resolve: {
         extensions:['', '.js', '.jsx', '.ts','.tsx'],
