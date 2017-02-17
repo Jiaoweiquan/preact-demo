@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { IndexRoute, Route, Router, Link, Redirect, browserHistory } from 'react-router'
 
-const Dial = () => (
+const Joke = () => (
     <div>
-        phone dial
+        <h1>jokes lol:</h1>
         <Link to="/">back</Link>
     </div>
 )
 
-export default Dial
+export default Joke
