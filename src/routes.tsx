@@ -9,9 +9,28 @@ const notFount = (name) => () => {
     return <h1>404:( {name}</h1>
 }
 
+function capitalize(st) {
+    st = st.trim()
+    if(st.length){
+        return st[0].toUpperCase() + st.slice(1)
+    }
+    else return ''
+}
+
+const Header = (props) => {
+    let t
+    const title = (t = props.location.pathname) == '/' ? 'Home' : capitalize(t.slice(1))
+    return (
+        <div>
+            <h2 className="topHeader">{title}</h2>
+            {props.children}
+        </div>
+    )
+}
+
 const router = (
     <Router history={createHashHistory()}>
-        <Route path="/">
+        <Route path="/" component={Header}>
             <IndexRoute component={Entry} />
             <Route path="joke" component={Joke}/>
             <Route path="news" component={notFount('news')}/>
